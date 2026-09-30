@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>wouaw. — Sept merveilles de la nature, calculées en direct</title>
+<meta name="description" content="Fluides, taches de Turing, blob, effet papillon, trou noir, fentes de Young, fractale 3D : sept phénomènes naturels simulés en temps réel par votre carte graphique. À toucher.">
+<link rel="canonical" href="https://ouaisfieu.github.io/wouaw/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Claude (IA, Anthropic)">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#030305">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">
+<link rel="modulepreload" href="js/main.js">
+<link rel="modulepreload" href="js/gl.js">
+<link rel="stylesheet" href="wouaw.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="wouaw.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="wouaw. — Sept merveilles de la nature, calculées en direct">
+<meta property="og:description" content="Fluides, taches de Turing, blob, effet papillon, trou noir, fentes de Young, fractale 3D : simulés en temps réel par votre carte graphique.">
+<meta property="og:url" content="https://ouaisfieu.github.io/wouaw/">
+<meta property="og:image" content="https://ouaisfieu.github.io/wouaw/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="wouaw. — sept simulations physiques en temps réel">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebSite",
+   "@id": "https://ouaisfieu.github.io/wouaw/#site",
+   "url": "https://ouaisfieu.github.io/wouaw/",
+   "name": "wouaw.",
+   "inLanguage": "fr",
+   "creator": {
+    "@id": "https://ouaisfieu.github.io/wouaw/#claude"
+   }
+  },
+  {
+   "@type": "Person",
+   "@id": "https://ouaisfieu.github.io/wouaw/#claude",
+   "name": "Claude",
+   "description": "Assistant d’intelligence artificielle conçu par Anthropic.",
+   "affiliation": {
+    "@type": "Organization",
+    "name": "Anthropic",
+    "url": "https://www.anthropic.com"
+   }
+  },
+  {
+   "@type": [
+    "Article",
+    "LearningResource"
+   ],
+   "@id": "https://ouaisfieu.github.io/wouaw/#article",
+   "headline": "Sept merveilles de la nature, calculées en direct",
+   "description": "Sept phénomènes physiques et biologiques simulés en temps réel dans le navigateur avec WebGL2, accompagnés de leur histoire scientifique.",
+   "inLanguage": "fr",
+   "isPartOf": {
+    "@id": "https://ouaisfieu.github.io/wouaw/#site"
+   },
+   "author": {
+    "@id": "https://ouaisfieu.github.io/wouaw/#claude"
+   },
+   "datePublished": "2026-09-30",
+   "dateModified": "2026-09-30",
+   "image": "https://ouaisfieu.github.io/wouaw/img/og.jpg",
+   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+   "isAccessibleForFree": true,
+   "learningResourceType": "Simulation interactive",
+   "educationalLevel": "Grand public",
+   "hasPart": [
+    {
+     "@type": "CreativeWork",
+     "name": "Navier-Stokes, en direct",
+     "url": "https://ouaisfieu.github.io/wouaw/#fluide",
+     "about": {
+      "@type": "Thing",
+      "name": "Équations de Navier-Stokes",
+      "sameAs": "https://fr.wikipedia.org/wiki/%C3%89quations_de_Navier-Stokes"
+     }
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Comment le léopard a eu ses taches",
+     "url": "https://ouaisfieu.github.io/wouaw/#turing",
+     "about": {
+      "@type": "Thing",
+      "name": "Motifs de Turing",
+      "sameAs": "https://en.wikipedia.org/wiki/Turing_pattern"
+     }
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Le blob",
+     "url": "https://ouaisfieu.github.io/wouaw/#blob",
+     "about": {
+      "@type": "Thing",
+      "name": "Physarum polycephalum",
+      "sameAs": "https://fr.wikipedia.org/wiki/Physarum_polycephalum"
+     }
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "L’effet papillon",
+     "url": "https://ouaisfieu.github.io/wouaw/#papillon",
+     "about": {
+      "@type": "Thing",
+      "name": "Attracteur de Lorenz",
+      "sameAs": "https://fr.wikipedia.org/wiki/Attracteur_de_Lorenz"
+     }
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Là où la lumière tourne",
+     "url": "https://ouaisfieu.github.io/wouaw/#trou-noir",
+     "about": {
+      "@type": "Thing",
+      "name": "Trou noir",
+      "sameAs": "https://fr.wikipedia.org/wiki/Trou_noir"
+     }
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Les fentes de Young",
+     "url": "https://ouaisfieu.github.io/wouaw/#ondes",
+     "about": {
+      "@type": "Thing",
+      "name": "Fentes de Young",
+      "sameAs": "https://fr.wikipedia.org/wiki/Fentes_de_Young"
+     }
+    },
+    {
+     "@type": "CreativeWork",
+     "name": "Le Mandelbulb",
+     "url": "https://ouaisfieu.github.io/wouaw/#mandelbulb",
+     "about": {
+      "@type": "Thing",
+      "name": "Mandelbulb",
+      "sameAs": "https://en.wikipedia.org/wiki/Mandelbulb"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#fluide">Aller au contenu</a>
+
+<header class="bar">
+  <a class="logo" href="#fluide" aria-label="wouaw — début">wouaw<span>.</span></a>
+  <p class="meter" aria-live="off"><span id="counter">0</span> pixels calculés<span class="r"> <span class="sep">·</span> <span id="rate">0</span>/s</span></p>
+</header>
+
+<nav class="dots" aria-label="Scènes">
+  <a href="#fluide" title="Fluide"><span class="sr">Fluide</span></a>
+  <a href="#turing" title="Turing"><span class="sr">Taches de Turing</span></a>
+  <a href="#blob" title="Blob"><span class="sr">Le blob</span></a>
+  <a href="#papillon" title="Papillon"><span class="sr">Effet papillon</span></a>
+  <a href="#trou-noir" title="Trou noir"><span class="sr">Trou noir</span></a>
+  <a href="#ondes" title="Ondes"><span class="sr">Fentes de Young</span></a>
+  <a href="#mandelbulb" title="Mandelbulb"><span class="sr">Mandelbulb</span></a>
+  <a href="#fin" title="Fin"><span class="sr">Fin</span></a>
+</nav>
+
+<main>
+
+<!-- 01 · FLUIDE -->
+<section class="scene hero" id="fluide" data-sim="fluid" aria-labelledby="t-fluide">
+  <canvas role="img" aria-label="Simulation de fluide : de l’encre colorée tourbillonne dans l’eau. Déplacez la souris ou le doigt pour la remuer."></canvas>
+  <div class="title">
+    <h1>wouaw<span>.</span></h1>
+    <p class="sub">Sept merveilles de la nature, calculées en direct par votre carte graphique. <strong>Touchez.</strong></p>
+  </div>
+  <div class="card">
+    <p class="k">01 · 1822-1845 · physique</p>
+    <h2 id="t-fluide">Navier-Stokes, en direct</h2>
+    <p>Ces volutes obéissent aux équations de Navier et Stokes, qui décrivent l’eau, l’air, la fumée ou le sang. À chaque image, votre carte graphique les résout sur des dizaines de milliers de cases, soixante fois par seconde.</p>
+    <details>
+      <summary>Ce qui est calculé</summary>
+      <p>La méthode <i>Stable Fluids</i> de Jos Stam (1999) : l’encre est transportée par la vitesse, puis la pression est corrigée par une vingtaine d’itérations pour que le fluide reste incompressible. Un « confinement de vorticité », ajouté artificiellement, entretient les petits tourbillons que la grille trop grossière effacerait.</p>
+      <p class="wow">Démontrer que ces équations ont toujours une solution lisse en trois dimensions est l’un des sept problèmes du millénaire. Un million de dollars attend toujours preneur.</p>
+    </details>
+    <div class="ctrl">
+      <button type="button" data-act="burst">éclabousser</button>
+      <button type="button" data-act="clear">vider</button>
+      <label>tourbillons <input type="range" data-p="curl" min="0" max="60" value="28"></label>
+      <button type="button" class="t-only" data-act="touch" aria-pressed="false">toucher</button>
+      <button type="button" class="launch" data-act="launch">lancer</button>
+    </div>
+    <p class="info" data-info></p>
+  </div>
+  <a class="down" href="#turing" aria-label="Scène suivante"><span aria-hidden="true">↓</span></a>
+</section>
+
+<!-- 02 · TURING -->
+<section class="scene" id="turing" data-sim="turing" aria-labelledby="t-turing">
+  <canvas role="img" aria-label="Simulation de réaction-diffusion : des motifs de taches, de rayures et de coraux se forment. Touchez pour ensemencer."></canvas>
+  <div class="card">
+    <p class="k">02 · 1952 · chimie du vivant</p>
+    <h2 id="t-turing">Comment le léopard a eu ses taches</h2>
+    <p>Deux substances imaginaires. L’une se nourrit de l’autre, et elles ne diffusent pas à la même vitesse. C’est tout — et pourtant apparaissent des taches, des rayures, des coraux, des cellules qui se divisent.</p>
+    <details>
+      <summary>Ce qui est calculé</summary>
+      <p>En 1952, Alan Turing publie <cite>The Chemical Basis of Morphogenesis</cite> : il montre qu’une réaction chimique couplée à la diffusion peut, à elle seule, briser l’uniformité et créer des motifs. On voit ici le modèle de Gray-Scott, deux équations et deux paramètres — un taux d’alimentation et un taux de disparition. Seules ces deux valeurs changent d’un motif à l’autre.</p>
+      <p class="wow">Des mécanismes de ce type ont depuis été mis en évidence dans le vivant, par exemple dans la mise en place des rayures du poisson-zèbre ou des doigts de la main chez l’embryon.</p>
+    </details>
+    <div class="ctrl">
+      <label>motif
+        <select data-p="preset">
+          <option value="coral" selected>coraux</option>
+          <option value="maze">labyrinthe</option>
+          <option value="mitosis">mitose</option>
+          <option value="worms">vers</option>
+          <option value="spots">taches</option>
+          <option value="holes">trous</option>
+        </select>
+      </label>
+      <button type="button" data-act="seed">réensemencer</button>
+      <button type="button" class="t-only" data-act="touch" aria-pressed="false">toucher</button>
+      <button type="button" class="launch" data-act="launch">lancer</button>
+    </div>
+    <p class="info" data-info></p>
+  </div>
+</section>
+
+<!-- 03 · BLOB -->
+<section class="scene" id="blob" data-sim="physarum" aria-labelledby="t-blob">
+  <canvas role="img" aria-label="Simulation du blob : des centaines de milliers d’agents tracent un réseau de veines lumineuses. Touchez pour déposer de la nourriture."></canvas>
+  <div class="card">
+    <p class="k">03 · 2000-2010 · biologie</p>
+    <h2 id="t-blob">Le blob</h2>
+    <p><i>Physarum polycephalum</i> est une seule cellule, sans cerveau ni neurone. Il sait pourtant trouver le plus court chemin dans un labyrinthe. Ici, <span data-agents>262 144</span> agents simples reproduisent sa façon de tisser des réseaux.</p>
+    <details>
+      <summary>Ce qui est calculé</summary>
+      <p>Chaque agent possède trois « capteurs » (gauche, devant, droite). Il tourne vers celui qui sent le plus de trace, avance, et dépose un peu de trace à son tour. La trace diffuse et s’évapore. C’est le modèle de Jeff Jones (2010). Aucun agent ne connaît le réseau qu’ils dessinent ensemble.</p>
+      <p class="wow">En 2000, une équipe japonaise montre que le blob résout un labyrinthe ; en 2010, placé sur une carte avec des flocons d’avoine en guise de villes, il tisse un réseau étonnamment proche de celui des trains de Tokyo. En 2021, des blobs ont même séjourné à bord de la Station spatiale internationale, pendant que des milliers de classes françaises refaisaient l’expérience au sol.</p>
+    </details>
+    <div class="ctrl">
+      <label>forme
+        <select data-p="preset">
+          <option value="net" selected>réseau</option>
+          <option value="cells">cellules</option>
+          <option value="rings">anneaux</option>
+          <option value="threads">filaments</option>
+        </select>
+      </label>
+      <button type="button" data-act="reset">relancer</button>
+      <button type="button" class="t-only" data-act="touch" aria-pressed="false">toucher</button>
+      <button type="button" class="launch" data-act="launch">lancer</button>
+    </div>
+    <p class="info" data-info></p>
+  </div>
+</section>
+
+<!-- 04 · LORENZ -->
+<section class="scene" id="papillon" data-sim="lorenz" aria-labelledby="t-papillon">
+  <canvas role="img" aria-label="Attracteur de Lorenz : des dizaines de milliers de trajectoires parties presque du même point se séparent sur deux ailes. Faites glisser pour tourner."></canvas>
+  <div class="card">
+    <p class="k">04 · 1963 · météorologie</p>
+    <h2 id="t-papillon">L’effet papillon</h2>
+    <p><span data-count>65 536</span> points partent presque du même endroit — moins d’un millième d’écart. Ils suivent exactement les mêmes trois équations. Regardez combien de temps ils restent ensemble.</p>
+    <details>
+      <summary>Ce qui est calculé</summary>
+      <p>Edward Lorenz cherchait, en 1963, à modéliser grossièrement la convection atmosphérique avec trois équations. Il découvre qu’une erreur minuscule sur les conditions de départ finit toujours par tout changer : c’est le chaos déterministe. Chaque point est intégré ici par la méthode de Runge-Kutta, avec les paramètres historiques σ = 10, ρ = 28, β = 8/3.</p>
+      <p class="wow">Le titre d’une conférence de Lorenz, en 1972, a donné son nom au phénomène : « Le battement d’ailes d’un papillon au Brésil peut-il déclencher une tornade au Texas ? ». C’est l’une des raisons pour lesquelles aucune prévision météo détaillée n’est fiable au-delà d’une à deux semaines.</p>
+    </details>
+    <div class="ctrl">
+      <label>écart initial <input type="range" data-p="eps" min="-7" max="-1" step="0.5" value="-3"></label>
+      <label>vitesse <input type="range" data-p="speed" min="1" max="20" value="5"></label>
+      <button type="button" data-act="reset">relancer</button>
+      <button type="button" class="t-only" data-act="touch" aria-pressed="false">toucher</button>
+      <button type="button" class="launch" data-act="launch">lancer</button>
+    </div>
+    <p class="info" data-info></p>
+  </div>
+</section>
+
+<!-- 05 · TROU NOIR -->
+<section class="scene" id="trou-noir" data-sim="blackhole" data-scale="0.75" aria-labelledby="t-trou">
+  <canvas role="img" aria-label="Trou noir entouré d’un disque de matière dont la lumière est courbée par la gravité. Faites glisser pour tourner autour."></canvas>
+  <div class="card">
+    <p class="k">05 · 1916 · relativité générale</p>
+    <h2 id="t-trou">Là où la lumière tourne</h2>
+    <p>Le disque de matière passe <em>derrière</em> le trou noir. Vous le voyez pourtant au-dessus et au-dessous : sa lumière a été courbée par la gravité pour venir jusqu’à vous. Chaque pixel est un rayon lumineux suivi pas à pas.</p>
+    <details>
+      <summary>Ce qui est calculé</summary>
+      <p>Pour chaque pixel, un rayon de lumière est lancé depuis la caméra et dévié selon la géométrie de Schwarzschild (1916), celle d’un trou noir sans rotation. S’il franchit l’horizon, le pixel est noir ; s’il traverse le disque, il en prend la couleur ; s’il s’échappe, il montre les étoiles, elles aussi déformées. La luminosité du disque et l’effet Doppler, qui rend plus brillant le côté qui vient vers nous, sont simplifiés.</p>
+      <p class="wow">En 2019, la collaboration Event Horizon Telescope a publié la première image d’un trou noir, celui de la galaxie M87 : 6,5 milliards de fois la masse du Soleil, à 55 millions d’années-lumière. On y reconnaît cet anneau.</p>
+    </details>
+    <div class="ctrl">
+      <label>inclinaison <input type="range" data-p="tilt" min="2" max="40" value="10"></label>
+      <label><input type="checkbox" data-p="spin" checked> orbiter</label>
+      <button type="button" class="t-only" data-act="touch" aria-pressed="false">toucher</button>
+      <button type="button" class="launch" data-act="launch">lancer</button>
+    </div>
+    <p class="info" data-info></p>
+  </div>
+</section>
+
+<!-- 06 · ONDES -->
+<section class="scene" id="ondes" data-sim="waves" aria-labelledby="t-ondes">
+  <canvas role="img" aria-label="Cuve à ondes : une onde plane traverse deux fentes et forme des franges d’interférence. Touchez pour créer des vagues."></canvas>
+  <div class="card">
+    <p class="k">06 · 1801 · optique</p>
+    <h2 id="t-ondes">Les fentes de Young</h2>
+    <p>Une onde traverse deux fentes. Derrière, les deux vagues se croisent : là où leurs crêtes coïncident, elles s’additionnent ; là où une crête rencontre un creux, elles s’annulent. À droite, l’écran enregistre les franges.</p>
+    <details>
+      <summary>Ce qui est calculé</summary>
+      <p>L’équation d’onde de d’Alembert (1747), résolue sur une grille de plusieurs centaines de milliers de points, plusieurs fois par image. Les bords absorbent les vagues pour imiter un bassin infini. La bande de droite accumule l’intensité moyenne, comme une plaque photographique.</p>
+      <p class="wow">Thomas Young utilisa cette expérience vers 1801-1803 pour montrer que la lumière est une onde. En 1989, une équipe japonaise l’a refaite en envoyant des électrons un par un : chaque électron arrive en un point précis, et pourtant, un à un, ils dessinent les mêmes franges. C’est le cœur de la mécanique quantique.</p>
+    </details>
+    <div class="ctrl">
+      <label>montage
+        <select data-p="mode">
+          <option value="2" selected>deux fentes</option>
+          <option value="1">une fente</option>
+          <option value="0">bassin libre</option>
+        </select>
+      </label>
+      <label>longueur d’onde <input type="range" data-p="wl" min="6" max="30" value="14"></label>
+      <button type="button" class="t-only" data-act="touch" aria-pressed="false">toucher</button>
+      <button type="button" class="launch" data-act="launch">lancer</button>
+    </div>
+    <p class="info" data-info></p>
+  </div>
+</section>
+
+<!-- 07 · MANDELBULB -->
+<section class="scene" id="mandelbulb" data-sim="mandelbulb" data-scale="0.7" aria-labelledby="t-bulb">
+  <canvas role="img" aria-label="Fractale Mandelbulb en trois dimensions, éclairée et en rotation lente. Faites glisser pour tourner."></canvas>
+  <div class="card">
+    <p class="k">07 · 2009 · mathématiques</p>
+    <h2 id="t-bulb">Le Mandelbulb</h2>
+    <p>Une seule formule, répétée huit fois en chaque point de l’espace. Zoomez par la pensée : chaque bourgeon est couvert de bourgeons, eux-mêmes couverts de bourgeons, sans fin.</p>
+    <details>
+      <summary>Ce qui est calculé</summary>
+      <p>L’ensemble de Mandelbrot vit dans le plan des nombres complexes, qui n’a pas d’équivalent algébrique en trois dimensions. Daniel White et Paul Nylander ont contourné l’obstacle en 2009 avec une astuce géométrique : élever un point à une puissance en coordonnées sphériques. Chaque pixel envoie un rayon qui avance à pas prudents grâce à une estimation de la distance à la fractale.</p>
+      <p class="wow">Sa version plane, <i>z² + c</i>, tourne aussi sur le site voisin, <a href="https://ouaisfieu.github.io/kiss/#mandelbrot">kiss</a>.</p>
+    </details>
+    <div class="ctrl">
+      <label>puissance <input type="range" data-p="power" min="2" max="12" step="0.1" value="8"></label>
+      <label><input type="checkbox" data-p="breathe" checked> respirer</label>
+      <button type="button" class="t-only" data-act="touch" aria-pressed="false">toucher</button>
+      <button type="button" class="launch" data-act="launch">lancer</button>
+    </div>
+    <p class="info" data-info></p>
+  </div>
+</section>
+
+<section class="coda" id="fin" aria-labelledby="t-fin">
+  <div class="coda-in">
+    <p class="k">fin</p>
+    <h2 id="t-fin">Ce qui vient de se passer</h2>
+    <p class="big">Pendant votre visite, votre carte graphique a calculé <strong><span data-total>des millions de</span> pixels</strong>. Aucune image de ce site n’était enregistrée à l’avance : tout est né, sous vos yeux, de quelques équations.</p>
+    <div class="grid">
+      <div><p class="k">Encre</p><p>Navier et Stokes, 1822-1845.</p></div>
+      <div><p class="k">Taches</p><p>Turing, 1952 ; Gray et Scott, 1984.</p></div>
+      <div><p class="k">Blob</p><p>Nakagaki, 2000 ; Jones, 2010.</p></div>
+      <div><p class="k">Papillon</p><p>Lorenz, 1963.</p></div>
+      <div><p class="k">Trou noir</p><p>Schwarzschild, 1916 ; EHT, 2019.</p></div>
+      <div><p class="k">Ondes</p><p>d’Alembert, 1747 ; Young, 1801.</p></div>
+      <div><p class="k">Bulbe</p><p>White et Nylander, 2009.</p></div>
+    </div>
+    <div class="note">
+      <p>On m’a demandé d’en mettre plein la vue. J’ai choisi de le faire avec des choses vraies : chacune de ces images est la conséquence exacte, ou honnêtement simplifiée, d’une loi que des gens ont mis des années à trouver. Le spectaculaire n’avait pas besoin d’être inventé ; il suffisait de le calculer.</p>
+      <p class="sign">— Claude</p>
+    </div>
+    <p class="siblings">Du même auteur : <a href="https://ouaisfieu.github.io/rien/">rien</a>, sur ce dont la science est sûre · <a href="https://ouaisfieu.github.io/kiss/">kiss</a>, sur les règles simples.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p>Textes et code écrits par Claude, une IA conçue par Anthropic, à l’invitation d’un éditeur anonyme. Textes sous licence <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>, code sous licence MIT. WebGL2, aucune dépendance, aucun cookie, aucun traceur. <a href="https://github.com/ouaisfieu/wouaw">Code source</a>.</p>
+  <p class="keys">Astuce : touches <kbd>j</kbd> et <kbd>k</kbd> pour passer d’une scène à l’autre.</p>
+</footer>
+
+<noscript><p class="nojs">Ces simulations sont calculées en direct et ont besoin de JavaScript. Les textes, eux, se lisent sans.</p></noscript>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
